@@ -1,5 +1,3 @@
-drop database db_biblioteca;
-
 CREATE DATABASE IF NOT EXISTS db_biblioteca;
 
 USE db_biblioteca;
@@ -98,15 +96,15 @@ RETURNS VARCHAR(200)
 READS SQL DATA 
 BEGIN
 	SET 	texto = REPLACE(texto, 'a', 'A'), texto = REPLACE(texto, 'b', 'B'), texto = REPLACE(texto, 'c', 'C'),
-			texto = REPLACE(texto, 'd', 'D'), texto = REPLACE(texto, 'e', 'E'), texto = REPLACE(texto, 'f', 'F'),
-			texto = REPLACE(texto, 'g', 'G'), texto = REPLACE(texto, 'h', 'H'), texto = REPLACE(texto, 'i', 'I'),
-			texto = REPLACE(texto, 'j', 'J'), texto = REPLACE(texto, 'k', 'K'), texto = REPLACE(texto, 'l', 'L'),
-			texto = REPLACE(texto, 'm', 'M'), texto = REPLACE(texto, 'n', 'N'), texto = REPLACE(texto, 'o', 'O'),
-			texto = REPLACE(texto, 'n', 'N'), texto = REPLACE(texto, 'o', 'O'), texto = REPLACE(texto, 'p', 'P'),
-			texto = REPLACE(texto, 'q', 'Q'), texto = REPLACE(texto, 'r', 'R'),texto = REPLACE(texto, 's', 'S'), 
-			texto = REPLACE(texto, 't', 'T'),texto = REPLACE(texto, 'u', 'U'), texto = REPLACE(texto, 'v', 'V'),
-			texto = REPLACE(texto, 'w', 'W'), texto = REPLACE(texto, 'x', 'X'), texto = REPLACE(texto, 'y', 'Y'),
-			texto = REPLACE(texto, 'z', 'Z'), texto = REPLACE(texto, 'ç', 'Ç');
+		texto = REPLACE(texto, 'd', 'D'), texto = REPLACE(texto, 'e', 'E'), texto = REPLACE(texto, 'f', 'F'),
+		texto = REPLACE(texto, 'g', 'G'), texto = REPLACE(texto, 'h', 'H'), texto = REPLACE(texto, 'i', 'I'),
+		texto = REPLACE(texto, 'j', 'J'), texto = REPLACE(texto, 'k', 'K'), texto = REPLACE(texto, 'l', 'L'),
+		texto = REPLACE(texto, 'm', 'M'), texto = REPLACE(texto, 'n', 'N'), texto = REPLACE(texto, 'o', 'O'),
+		texto = REPLACE(texto, 'n', 'N'), texto = REPLACE(texto, 'o', 'O'), texto = REPLACE(texto, 'p', 'P'),
+		texto = REPLACE(texto, 'q', 'Q'), texto = REPLACE(texto, 'r', 'R'),texto = REPLACE(texto, 's', 'S'), 
+		texto = REPLACE(texto, 't', 'T'),texto = REPLACE(texto, 'u', 'U'), texto = REPLACE(texto, 'v', 'V'),
+		texto = REPLACE(texto, 'w', 'W'), texto = REPLACE(texto, 'x', 'X'), texto = REPLACE(texto, 'y', 'Y'),
+		texto = REPLACE(texto, 'z', 'Z'), texto = REPLACE(texto, 'ç', 'Ç');
 RETURN texto;
 
 END \\ 
