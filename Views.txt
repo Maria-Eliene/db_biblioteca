@@ -1,0 +1,47 @@
+
+-- Criação de VIEWs para manter a integridade das tabelas 
+
+
+CREATE VIEW vw_dados_livro AS 
+SELECT 	l.id_livro, l.isbn, l.titulo_livro Livro, l.ano_lancamento,
+	e.nome Editora,
+        CONCAT(a.nome,' ', a.sobrenome) 'Autor',
+        c.desc_categoria Categoria
+FROM livro l 
+JOIN editora e 
+	ON l.id_livro = e.id_editora
+JOIN autor a 
+	ON l.id_livro = a.id_autor
+JOIN categoria c 
+	ON l.id_livro = c.id_categoria;
+
+
+
+CREATE VIEW vw_dados_autor AS 
+SELECT 	a.id_autor, CONCAT(a.nome, ' ', a.sobrenome) 'Autor', a.nacionalidade, a.qtd_livro_publicado,
+	l.id_livro
+FROM autor a
+JOIN livro l 
+	ON a.id_autor = l.id_livro
+GROUP BY id_autor ;
+
+
+
+CREATE VIEW vw_livro_editora AS 
+SELECT 	e.id_editora, e.nome,
+	COUNT(l.id_livro) Quantidade
+FROM editora e
+INNER JOIN livro l  
+	ON l.id_editora = e.id_editora
+GROUP BY id_editora;
+
+
+CREATE VIEW vw_dados_categoria AS 
+SELECT 	c.id_categoria, c.desc_categoria,
+	COUNT(l.id_livro) Quantidade
+FROM categoria c
+INNER JOIN livro l  
+	ON l.id_categoria = c.id_categoria
+GROUP BY id_categoria
+;
+

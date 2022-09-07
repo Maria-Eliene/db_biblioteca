@@ -1,0 +1,13 @@
+-- TRIGGER para atualizar a quantidade de livros de cada autor 
+
+DELIMITER //
+CREATE TRIGGER tr_atualiza_livros
+AFTER INSERT 
+ON autor
+FOR EACh ROW
+	BEGIN
+		DECLARE total_livro INT;
+		SET total_livro = (SELECT COUNT(id_livro) FROM livro_autor WHERE id_autor =  NEW.id_autor);
+        UPDATE autor SET qtd_livro_publicado = total_livro WHERE id_autor = NEW.id_autor;
+    END //
+DELIMITER ;
