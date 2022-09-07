@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS db_biblioteca;
 
-USE db_db_biblioteca;
+USE db_biblioteca;
 
 CREATE TABLE editora (
 	id_editora INT PRIMARY KEY AUTO_INCREMENT,
